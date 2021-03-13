@@ -4,15 +4,21 @@
   become: true
   tasks:
 
+  - name: install EPEL repository
+    yum:
+      name: "epel-release"
+      state: "present"
+
   - name: remove httpd
     yum:
       name: httpd
       state: removed
+
   - name: Install python pip
     yum:
       name: python-pip
       state: present  
-      
+
   - name: install docker
     yum:
       name: docker
@@ -23,6 +29,7 @@
       name: docker
       state: started
       enabled: yes
+      
   - name: Install docker-py python module
     pip:
       name: docker-py
