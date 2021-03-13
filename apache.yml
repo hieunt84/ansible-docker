@@ -8,7 +8,11 @@
     yum:
       name: httpd
       state: removed
-  
+  - name: Install python pip
+    yum:
+      name: python-pip
+      state: present  
+      
   - name: install docker
     yum:
       name: docker
