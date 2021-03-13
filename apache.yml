@@ -1,17 +1,22 @@
 ---
-- name: Install httpd
-  hosts: webservers_centos
+- name: Deploy web server apache on docker using ansible for dev environment
+  hosts: dev
+  become: true
   tasks:
 
-  - name: Install httpd
+  - name: remove httpd
     yum:
       name: httpd
-      state: present  
+      state: removed
+  
+  - name: install docker
+    yum:
+      name: docker
+      state: present
 
-  - name: Start Apache Server
+  - name: Start docker
     service:
-    #ansible.builtin.service:
-      name: httpd
+      name: docker
       state: started
       enabled: yes
 
@@ -22,15 +27,10 @@
   - name: reload firewalld
     command:
       cmd: firewall-cmd --reload
-
-  - name: copy souce code
-    copy:
-      src: index.html 
-      dest: /var/www/html/
-
+  
   - name: check status
     command:
-      cmd: systemctl status httpd
+      cmd: systemctl status docker
     register: result
       
   - name: show result on screen 
