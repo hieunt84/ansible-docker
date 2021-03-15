@@ -7,6 +7,13 @@ pipeline {
                 sh "docker build . -t web2"
             }
         }
+
+        stage('Stage Docker Hub Push') {
+            steps {         
+                sh "docker login -u happyit -p Password@68"
+                sh " docker push happyit/web2"
+            }
+        }
         
         stage('Stage Deploy With Ansible') {
             steps {
