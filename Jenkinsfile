@@ -10,7 +10,7 @@ pipeline {
 
         stage('Stage Docker Hub Push') {
             steps {         
-                sh "docker login -u happyit -p Password@68"
+                sh "docker login -u happyit -p "
                 sh " docker push happyit/web2"
             }
         }
