@@ -2,13 +2,13 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+        stage('Stage Build With Docker image') {
             steps {
-                echo "This is Build stage"
+                sh "docker build . -t web2"
             }
         }
         
-        stage('Execute Ansible') {
+        stage('Stage Deploy With Ansible') {
             steps {
                 ansiblePlaybook credentialsId: 'abc1df23-b934-48dd-93b9-7f5894abc5a3', disableHostKeyChecking: true, installation: 'ansible2', inventory: 'hosts.ini', playbook: 'apache.yml'
                 

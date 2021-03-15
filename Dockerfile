@@ -1,5 +1,5 @@
 # Download image của debian
-FROM nginx:lastest
+FROM nginx
 
 # Chuẩn bị environment cho app
 #ENV OE_USER='openerp'\
@@ -11,7 +11,7 @@ FROM nginx:lastest
 
 # Copy source nginx từ máy chính vào container.
 #COPY ./index /tmp
-COPY /root/webs/* /usr/share/nginx/html
+COPY ./index.html /usr/share/nginx/html
 
 # Thực hiện một loạt cài đặt, giải nén file v.v...
 #RUN set -x \
