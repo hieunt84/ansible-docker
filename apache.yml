@@ -20,8 +20,8 @@
 
   - name: Start the container
     docker_container:
-      name: happyit
-      image: web2
+      name: "web-happyit"
+      image: "happyit/web2"
       state: started
       published_ports:
         - 0.0.0.0:80:80
