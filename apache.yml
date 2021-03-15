@@ -3,7 +3,21 @@
   hosts: dev
   become: true
   tasks:
-    
+  - name: install EPEL repository
+    yum:
+      name: "epel-release"
+      state: "present"
+
+  - name: Install python pip
+    yum:
+      name: python-pip
+      state: present
+
+  - name: Install docker-py python module
+    pip:
+      name: docker-py
+      state: present
+
   - name: Start the container
     docker_container:
       name: happyit
