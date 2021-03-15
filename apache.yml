@@ -23,6 +23,7 @@
       name: "web-happyit"
       image: "happyit/web2"
       state: started
+      restart: yes
       published_ports:
         - 0.0.0.0:80:80
 
