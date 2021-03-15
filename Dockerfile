@@ -10,7 +10,8 @@ FROM nginx:lastest
 #DEBIAN_FRONTEND=noninteractive
 
 # Copy source nginx từ máy chính vào container.
-COPY ./index /tmp
+#COPY ./index /tmp
+COPY /root/webs/* /usr/share/nginx/html
 
 # Thực hiện một loạt cài đặt, giải nén file v.v...
 #RUN set -x \
