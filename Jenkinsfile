@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Stage Build With Docker image') {
             steps {         
-                sh "docker build . -t web2"
+                sh "docker build . -t happyit/web2"
             }
         }
 
