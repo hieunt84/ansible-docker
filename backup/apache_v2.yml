@@ -16,7 +16,7 @@
 
   - name: Install python pip
     yum:
-      name: python-pip
+      name: python3
       state: present  
 
   - name: install docker
