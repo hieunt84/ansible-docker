@@ -3,8 +3,7 @@ pipeline {
 
     stages {
         stage('Stage Build With Docker image') {
-            steps {
-                sh "usermod -aG docker jenkins"
+            steps {         
                 sh "docker build . -t web2"
             }
         }
