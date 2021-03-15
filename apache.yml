@@ -28,7 +28,7 @@
 
   - name: check status
     command:
-      cmd: echo "sucessful"
+      cmd: docker ps
     register: result
       
   - name: show result on screen 
