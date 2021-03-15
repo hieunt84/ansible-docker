@@ -28,7 +28,7 @@
 
   - name: check status
     command:
-      cmd: netstat -an | grep 80
+      cmd: echo "sucessful"
     register: result
       
   - name: show result on screen 
