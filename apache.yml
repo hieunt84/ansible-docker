@@ -21,7 +21,7 @@
   - name: Start the container
     docker_container:
       name: "web-happyit"
-      image: "happyit/web2"
+      image: "happyit/web2:{{DOCKER_TAG}}"
       state: started
       restart: yes
       published_ports:
