@@ -10,10 +10,11 @@ pipeline {
 
         stage('Stage Docker Hub Push') {
             steps { 
-                withCredentials([string(credentialsId: 'docker_hub', variable: 'DockerHubPwd')]) {
-                    sh "docker login -u happyit -p ${DockerHubPwd}"
-                }               
+                //withCredentials([string(credentialsId: 'docker_hub', variable: 'DockerHubPwd')]) {
+                //    sh "docker login -u happyit -p ${DockerHubPwd}"
+                //}               
                 
+                sh "docker login -u happyit -p Password@68"
                 sh " docker push happyit/web2"
             }
         }
