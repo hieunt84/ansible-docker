@@ -21,9 +21,9 @@ pipeline {
             }
         }
         
-        stage('Stage Deploy With Ansible') {
+        stage('Stage Deploy With Ansible on Development Environment') {
             steps {
-                ansiblePlaybook credentialsId: 'abc1df23-b934-48dd-93b9-7f5894abc5a3', disableHostKeyChecking: true, extras: "-e DOCKER_TAG=${DOCKER_TAG}", installation: 'ansible2', inventory: 'hosts.ini', playbook: 'apache.yml'
+                ansiblePlaybook credentialsId: 'abc1df23-b934-48dd-93b9-7f5894abc5a3', disableHostKeyChecking: true, extras: "-e DOCKER_TAG=${DOCKER_TAG}", installation: 'ansible2', inventory: 'dev.inv', playbook: 'apache.yml'
                 
             }
         }
