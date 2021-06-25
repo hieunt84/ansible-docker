@@ -2,4 +2,3 @@
 ### Ref
     https://www.youtube.com/watch?v=13FpCxCClLY
     https://github.com/javahometech/dockeransiblejenkins
-    https://github.com/hieunt84/ansible-docker
